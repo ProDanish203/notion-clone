@@ -49,7 +49,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "antialiased overflow-x-clip",
+          "antialiased overflow-x-clip min-h-screen",
           poppins.className,
           roboto.variable
         )}
