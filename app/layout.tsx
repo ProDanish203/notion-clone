@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/store/theme-provider";
 import { ConvexClientProvider } from "@/store/convex-provider";
+import { ModalProvider } from "@/store/modal-provider";
 
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
@@ -62,6 +63,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Toaster richColors position="top-right" />
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>

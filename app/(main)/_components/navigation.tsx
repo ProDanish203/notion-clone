@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/popover";
 import { TrashBox } from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 export const Navigation = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -38,6 +39,7 @@ export const Navigation = () => {
 
   const create = useMutation(api.documents.create);
   const { onOpen } = useSearch();
+  const { onOpen: settingsOnOpen } = useSettings();
 
   useEffect(() => {
     if (isMobile) collapse();
@@ -143,7 +145,7 @@ export const Navigation = () => {
         <div>
           <UserItem />
           <Item onClick={onOpen} label="Search" isSearch icon={Search} />
-          <Item onClick={() => {}} label="Settings" icon={Settings} />
+          <Item onClick={settingsOnOpen} label="Settings" icon={Settings} />
           <Item onClick={handleCreate} label="New Page" icon={PlusCircle} />
         </div>
         <div className="mt-4">
