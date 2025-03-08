@@ -24,6 +24,7 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from "@/components/ui/popover";
+import { TrashBox } from "./trash-box";
 
 export const Navigation = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -150,7 +151,7 @@ export const Navigation = () => {
             <PopoverTrigger className="w-full mty-4">
               <Item label="Trash" icon={Trash} />
               <PopoverContent side={isMobile ? "bottom" : "right"}>
-                <p>Trash Box</p>
+                <TrashBox />
               </PopoverContent>
             </PopoverTrigger>
           </Popover>
