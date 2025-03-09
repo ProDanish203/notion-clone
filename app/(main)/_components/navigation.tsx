@@ -129,8 +129,8 @@ export const Navigation = () => {
       <aside
         ref={sidebarRef}
         className={cn(
-          "group/sidebar h-screen bg-secondary overflow-y-auto relative flex w-60 flex-col z-[9999]",
-          isMobile && "w-0",
+          "group/sidebar h-screen sticky top-0 bg-secondary overflow-y-auto flex w-60 flex-col z-[9999]",
+          isMobile ? "fixed inset-0 w-full h-full" : "",
           isResetting && "transition-all ease-in-out duration-300"
         )}
       >
@@ -165,7 +165,10 @@ export const Navigation = () => {
         <div
           onClick={resetWidth}
           onMouseDown={handleMouseDown}
-          className="opacity-0 group-hover/sidebar:opacity-100 transition cursor-ew-resize absolute h-full w-1 bg-primary/10 right-0 top-0"
+          className={cn(
+            "opacity-0 group-hover/sidebar:opacity-100 transition cursor-ew-resize absolute h-full w-1 bg-primary/10 right-0 top-0",
+            isMobile && "hidden"
+          )}
         />
       </aside>
       <div
