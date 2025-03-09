@@ -64,7 +64,7 @@ export const Item = ({
     const promise = create({ title: "Untitled", parentDocument: id }).then(
       (id) => {
         if (!expanded) onExpand?.();
-        // router.push(`/documents/${id}`);
+        router.push(`/documents/${id}`);
       }
     );
 
@@ -78,7 +78,7 @@ export const Item = ({
   const onArchive = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!id) return;
     e.stopPropagation();
-    const promise = archive({ id });
+    const promise = archive({ id }).then(() => router.push("/documents"));
 
     toast.promise(promise, {
       loading: "Moviing to trash...",

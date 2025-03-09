@@ -15,10 +15,8 @@ interface EditorProps {
   editable?: boolean;
 }
 
-export const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
-  const [content, setContent] = useState<string>(
-    initialContent || JSON.stringify([], null, 2)
-  );
+const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
+  const [content, setContent] = useState<string>(initialContent || "");
   const debouncedContent = useDebounce<string>(content, 1500);
   const { edgestore } = useEdgeStore();
 
@@ -56,3 +54,5 @@ export const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
     </>
   );
 };
+
+export default Editor;

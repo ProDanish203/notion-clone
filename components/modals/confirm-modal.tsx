@@ -33,6 +33,7 @@ export const ConfirmModal = ({ children, onConfirm }: ConfirmModalProps) => {
           e.stopPropagation();
           setOpen(true);
         }}
+        asChild
       >
         {children}
       </AlertDialogTrigger>
