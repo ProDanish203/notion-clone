@@ -25,7 +25,7 @@ export const Menu = ({ documentId }: MenuProps) => {
   const { user } = useUser();
   const archive = useMutation(api.documents.archive);
 
-  const onArchive = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const onArchive = () => {
     const promise = archive({ id: documentId });
 
     toast.promise(promise, {

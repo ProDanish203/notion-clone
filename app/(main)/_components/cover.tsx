@@ -36,7 +36,9 @@ export const Cover = ({ url, preview }: CoverProps) => {
         url ? "bg-muted" : "h-[12vh]"
       )}
     >
-      {!!url && <Image src={url} alt="Cover" fill className="objecr-cover" />}
+      {!!url && (
+        <Image priority src={url} alt="Cover" fill className="objecr-cover" />
+      )}
       {url && !preview && (
         <div className="opacity-0 group-hover:opacity-100 absolute bottom-5 right-5 flex items-center gap-x-2">
           <Button
@@ -63,6 +65,9 @@ export const Cover = ({ url, preview }: CoverProps) => {
   );
 };
 
-Cover.Skeleton = () => {
+const CoverSkeleton = () => {
   return <Skeleton className="w-full h-[12vh]" />;
 };
+
+CoverSkeleton.displayName = "Cover.Skeleton";
+Cover.Skeleton = CoverSkeleton;

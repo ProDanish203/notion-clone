@@ -17,7 +17,7 @@ import {
 import { useSearch } from "@/hooks/use-search";
 
 export const SearchCommand = () => {
-  const { isOpen, onClose, onOpen, onToggle } = useSearch();
+  const { isOpen, onClose, onToggle } = useSearch();
   const router = useRouter();
   const { user } = useUser();
   const documents = useQuery(api.documents.getSearch);

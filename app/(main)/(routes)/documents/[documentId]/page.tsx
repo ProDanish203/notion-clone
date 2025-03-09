@@ -10,7 +10,7 @@ import { Cover } from "@/app/(main)/_components/cover";
 import { Toolbar } from "@/components/toolbar";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const SingleDocumentPage = () => {
+const DocumentPage = () => {
   const Editor = useMemo(
     () => dynamic(() => import("@/components/editor"), { ssr: false }),
     []
@@ -58,4 +58,4 @@ const SingleDocumentPage = () => {
   );
 };
 
-export default SingleDocumentPage;
+export default DocumentPage;

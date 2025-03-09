@@ -9,9 +9,7 @@ import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
-interface TrashBoxProps {}
-
-export const TrashBox = ({}: TrashBoxProps) => {
+export const TrashBox = () => {
   const router = useRouter();
   const params = useParams();
   const documents = useQuery(api.documents.getTrash);
